@@ -27,6 +27,10 @@ namespace ASP_Homework_Product.Controllers
         {
             return View();
         }
+        public string Hello()
+        {
+            return "Hello from Dzboeva";
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

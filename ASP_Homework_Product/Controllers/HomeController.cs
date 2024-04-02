@@ -29,7 +29,7 @@ namespace ASP_Homework_Product.Controllers
         }
         public string Hello()
         {
-            return "Hello from Dzboeva";
+            return "Hello from Dzbo20";
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

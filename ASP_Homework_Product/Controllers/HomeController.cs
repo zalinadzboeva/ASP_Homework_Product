@@ -12,24 +12,21 @@ namespace ASP_Homework_Product.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+        private readonly ProductStorig productStorig;
         public HomeController(ILogger<HomeController> logger)
         {
-            _logger = logger;
+            productStorig = new ProductStorig();
         }
 
         public IActionResult Index()
         {
-            return View();
+            var products = productStorig.GetProducts();
+            return View((object)products);
         }
 
         public IActionResult Privacy()
         {
             return View();
-        }
-        public string Hello()
-        {
-            return "Hello from Dzbo20";
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

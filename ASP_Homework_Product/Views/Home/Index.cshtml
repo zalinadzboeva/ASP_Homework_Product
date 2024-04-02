@@ -1,9 +1,20 @@
-﻿@{
+﻿@model List<Product>
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Домашнее задание</h1>
-    <h2>Создание списка товаров для онлайн магазина</h2>
-    <p><a href="https://stepik.org/lesson/522438/step/2?unit=680171">Ссылка на задание</a></p>
+<div class=" product-grid">
+    @foreach (var product in Model)
+    {
+            <div class="product-card">
+                    <img src="https://a.allegroimg.com/s1024/0cecb9/04901dee433194d3b05c34ada296" >
+                <a style="color:#000" href ="product/index/@product.Id">@product.Name</a>
+                <p class="product__info">@product.Cost</p>
+                <div class = "basket">
+                    <a  style="color:#000" href="#">Добавить в корзину</a>
+                </div>
+            </div>
+    }
 </div>
+
+

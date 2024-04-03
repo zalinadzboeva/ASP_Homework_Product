@@ -23,14 +23,6 @@ namespace ASP_Homework_Product
         {
             return products;
         }
-        public Product TryGetById(int id)
-        {
-            foreach (Product product in products)
-            {
-                if(product.Id == id)
-                    return product;
-            }
-            return null;
-        }
+        
     }
 }

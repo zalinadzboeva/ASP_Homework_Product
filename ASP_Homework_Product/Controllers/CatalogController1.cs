@@ -2,16 +2,16 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
 
-using static ASP_Homework_Product.CardRepository;
+using static ASP_Homework_Product.InMemoryCartsStorage;
 
 namespace WebApplication2.Controllers
 {
-    public class CatalogController : Controller
+    public class InMemoryCartsStorage : Controller
     {
-        private readonly ProductStorig productStorig;
+        private readonly IProductsRepository productStorig;
 
-        private readonly CardRepository cardStorig;
-        public CatalogController(ProductStorig productStorig, CardRepository cardStorig)
+        private readonly ICardStorig cardStorig;
+        public InMemoryCartsStorage(IProductsRepository productStorig, ICardStorig cardStorig)
         {
             this.productStorig = productStorig;
             this.cardStorig = cardStorig;

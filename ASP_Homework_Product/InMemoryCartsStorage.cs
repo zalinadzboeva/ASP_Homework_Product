@@ -3,11 +3,11 @@ using System;
 using System.Linq;
 namespace ASP_Homework_Product
 {
-    public class CardRepository
+    public class InMemoryCartsStorage:ICardStorig
     {
             private  List<Catalog> carts = new List<Catalog>();
 
-            internal  Catalog TryGetByUserId(string userId)
+            public Catalog TryGetByUserId(string userId)
             {
                 return carts.FirstOrDefault(x => x.UserId == userId);
             }

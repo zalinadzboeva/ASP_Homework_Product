@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebApplication2.Controllers;
 
 namespace ASP_Homework_Product
 {
@@ -22,8 +23,8 @@ namespace ASP_Homework_Product
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<CardRepository>();
-            services.AddSingleton<ProductStorig>();
+            services.AddSingleton<ICardStorig,InMemoryCartsStorage>();
+            services.AddSingleton<IProductsRepository, InMemoryCartsRepository>();
             services.AddControllersWithViews();
         }
 

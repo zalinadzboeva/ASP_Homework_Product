@@ -12,9 +12,9 @@ namespace ASP_Homework_Product.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ProductStorig productStorig;
+        private readonly IProductsRepository productStorig;
 
-        public HomeController(ProductStorig productStorig)
+        public HomeController(IProductsRepository productStorig)
         {
             this.productStorig = productStorig;
         }

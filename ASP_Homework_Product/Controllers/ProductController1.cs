@@ -5,8 +5,8 @@ namespace WebApplication2.Controllers
 {
     public class ProductController : Controller
     {
-        private ProductStorig productStorig;
-        public ProductController(ProductStorig productStorig)
+        private IProductsRepository productStorig;
+        public ProductController(IProductsRepository productStorig)
         {
             this.productStorig = productStorig;
         }

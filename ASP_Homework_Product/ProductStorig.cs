@@ -12,7 +12,7 @@ namespace ASP_Homework_Product
 {
     public class ProductStorig
     {
-        private static List<Product> products = new List<Product>
+        private  List<Product> products = new List<Product>
         {
             new Product("чашка",100,"dkvdvnkdvn","/imeges/imeg1.jpg"),
             new Product("чашка",200,"dkvdvnkdvn","/imeges/imeg2.jpg"),

@@ -13,10 +13,13 @@ namespace ASP_Homework_Product.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ProductStorig productStorig;
-        public HomeController(ILogger<HomeController> logger)
+
+        public HomeController(ProductStorig productStorig)
         {
-            productStorig = new ProductStorig();
+            this.productStorig = productStorig;
         }
+
+
 
         public IActionResult Index()
         {

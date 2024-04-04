@@ -6,11 +6,11 @@ namespace WebApplication2.Controllers
     public class ProductController : Controller
     {
         private ProductStorig productStorig;
-        public ProductController()
+        public ProductController(ProductStorig productStorig)
         {
-            productStorig = new ProductStorig();
+            this.productStorig = productStorig;
         }
-        
+
         public IActionResult Index(int id)
         {
             var product = productStorig.TryGetById(id);

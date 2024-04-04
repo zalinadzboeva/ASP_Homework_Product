@@ -5,16 +5,14 @@ namespace ASP_Homework_Product
 {
     public class CardRepository
     {
-        public static class CartsRepository
-        {
-            private static List<Catalog> carts = new List<Catalog>();
+            private  List<Catalog> carts = new List<Catalog>();
 
-            internal static Catalog TryGetByUserId(string userId)
+            internal  Catalog TryGetByUserId(string userId)
             {
                 return carts.FirstOrDefault(x => x.UserId == userId);
             }
 
-            public static void Add(Product product, string userId)
+            public  void Add(Product product, string userId)
             {
                 var exisitingCart = TryGetByUserId(userId);
                 if (exisitingCart == null)
@@ -56,4 +54,3 @@ namespace ASP_Homework_Product
             }
         }
     }
-}

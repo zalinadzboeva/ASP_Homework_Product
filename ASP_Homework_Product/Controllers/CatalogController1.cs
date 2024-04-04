@@ -8,7 +8,15 @@ namespace WebApplication2.Controllers
 {
     public class CatalogController : Controller
     {
-        private ProductStorig productStorig;
+        private readonly ProductStorig productStorig;
+
+        private readonly CardRepository cardStorig;
+        public CatalogController(ProductStorig productStorig, CardRepository cardStorig)
+        {
+            this.productStorig = productStorig;
+            this.cardStorig = cardStorig;
+        }
+
         public CatalogController()
         {
             productStorig = new ProductStorig();
@@ -16,14 +24,14 @@ namespace WebApplication2.Controllers
 
        public ActionResult Index()
         {
-            var catalog = CartsRepository.TryGetByUserId(Constant.UserId);
+            var catalog = cardStorig.TryGetByUserId(Constant.UserId);
             return View(catalog);
         }
 
         public IActionResult Add(int productId)
         {
             var product = productStorig.TryGetById(productId);
-            CartsRepository.Add(product, Constant.UserId);
+            cardStorig.Add(product, Constant.UserId);
             return RedirectToAction("Index");
         }
     }

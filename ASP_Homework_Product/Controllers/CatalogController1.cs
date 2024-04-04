@@ -17,10 +17,6 @@ namespace WebApplication2.Controllers
             this.cardStorig = cardStorig;
         }
 
-        public CatalogController()
-        {
-            productStorig = new ProductStorig();
-        }
 
        public ActionResult Index()
         {

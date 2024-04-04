@@ -1,13 +1,30 @@
 ﻿using ASP_Homework_Product;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 
-namespace ASP_Homework_Product.Controllers
+using static ASP_Homework_Product.CardRepository;
+
+namespace WebApplication2.Controllers
 {
-    public class CatalogController1 : Controller
+    public class CatalogController : Controller
     {
-        public string Index()
+        private ProductStorig productStorig;
+        public CatalogController()
         {
-            return "ghbdtn";
+            productStorig = new ProductStorig();
+        }
+
+       public ActionResult Index()
+        {
+            var catalog = CartsRepository.TryGetByUserId(Constant.UserId);
+            return View(catalog);
+        }
+
+        public IActionResult Add(int productId)
+        {
+            var product = productStorig.TryGetById(productId);
+            CartsRepository.Add(product, Constant.UserId);
+            return RedirectToAction("Index");
         }
     }
 }

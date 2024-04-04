@@ -47,7 +47,7 @@ a.text:active, /* активная/посещенная ссылка */
 a.text:hover, /* при наведении */
 a.text {
     text-decoration: none;
-    color: #666;
+    color: #f793c8;
 }
 
 .basket {

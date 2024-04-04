@@ -14,10 +14,10 @@ namespace ASP_Homework_Product
     {
         private static List<Product> products = new List<Product>
         {
-            new Product("туфли",100,"dkvdvnkdvn"),
-            new Product("туфли",200,"dkvdvnkdvn"),
-            new Product("туфли",300,"dkvdvnkdvn"),
-            new Product("туфли",400,"dkvdvnkdvn")
+            new Product("чашка",100,"dkvdvnkdvn","/imeges/imeg1.jpg"),
+            new Product("чашка",200,"dkvdvnkdvn","/imeges/imeg2.jpg"),
+            new Product("чашка",300,"dkvdvnkdvn","/imeges/imeg3.jpg"),
+            new Product("чашка",400,"dkvdvnkdvn", "/imeges/imeg4.jpg")
         };
         public List<Product> GetProducts()
         {

@@ -10,10 +10,13 @@ namespace WebApplication2.Controllers
         {
             productStorig = new ProductStorig();
         }
-        public string Index(int id)
+        
+        public IActionResult Index(int id)
         {
             var product = productStorig.TryGetById(id);
-            return product.ToString();
+            return View((object)product);
+            if (product == null)
+                return View();
         }
     }
 }

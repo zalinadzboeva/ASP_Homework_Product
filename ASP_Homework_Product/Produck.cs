@@ -18,14 +18,17 @@ namespace ASP_Homework_Product
         public int Cost { get; set; }
         public string Description { get; set; }
 
+        public string Imeg { get; set; }
+
         List<Product> Products { get; set; }
 
-        public Product(string name, int cost , string description)
+        public Product(string name, int cost , string description,string imeg)
         {
             Id = counter;
             Name = name;
             Cost = cost;
             Description = description;
+            Imeg = imeg;
             counter++;
         }
         public override string ToString()

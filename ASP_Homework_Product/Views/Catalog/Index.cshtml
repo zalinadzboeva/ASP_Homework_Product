@@ -29,7 +29,12 @@ else
                                     <td>@item.Product.Cost</td>
                                     <td>@item.Amount</td>
                                     <td>@item.Cost</td>
+                                    <td>
+                                        <a class="btn btn-primary" href="#" role="button">+</a>
+                                        <a class="btn btn-primary" href="#" role="button">-</a>
+                                    </td>
                                 </tr>
+
                     }
                     </tbody>
                 </table>
@@ -40,6 +45,7 @@ else
                 <div class="text-center">
                     <a class="btn btn-primary btn" href="/home/index" role="button">Продолжить покупки</a>
                     <a class="btn btn-success" href="#" role="button">Оформить заказ</a>
+                    <a class="btn btn-danger" href="/catalog/clear" role="button">Очистить корзину</a>
                 </div>
             </div>
         </div>

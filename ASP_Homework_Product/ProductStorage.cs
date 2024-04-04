@@ -10,7 +10,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace ASP_Homework_Product
 {
-    public class InMemoryCartsRepository:IProductsRepository
+    public class ProductStorage:IProductsRepository
     {
         private  List<Product> products = new List<Product>
         {

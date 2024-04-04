@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 namespace ASP_Homework_Product
 {
-    public class InMemoryCartsStorage:ICardStorig
+    public class CartsStorage:ICardStorig
     {
             private  List<Catalog> carts = new List<Catalog>();
 
@@ -52,5 +52,10 @@ namespace ASP_Homework_Product
                     }
                 }
             }
+        public void Clear(string userId)
+        {
+            var exisitingCart = TryGetByUserId(userId);
+            carts.Remove(exisitingCart);
         }
+    }
     }
